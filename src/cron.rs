@@ -175,7 +175,7 @@ impl CronExpr {
             if self.matches(&candidate) {
                 return Some(candidate);
             }
-            candidate = candidate + Duration::minutes(1);
+            candidate += Duration::minutes(1);
         }
         None
     }
