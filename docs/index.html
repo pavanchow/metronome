@@ -7,6 +7,7 @@
 <link rel="icon" type="image/svg+xml" href="logo.svg">
 <meta name="description" content="Metronome is a single-binary cron scheduler in Rust with a pure, unit-tested schedule engine you can embed in your own project. No daemon, no global state.">
 <meta name="author" content="Pavan Nallamothu (pavanchow)">
+<meta name="keywords" content="cron scheduler, Rust cron, cron expression parser, job scheduler, next fire time, next_after, single binary, unit testable scheduler, crontab, cron syntax, Pavan Nallamothu, pavanchow">
 <link rel="canonical" href="https://pavanchow.github.io/metronome/">
 
 <meta property="og:type" content="website">
@@ -25,6 +26,7 @@
   "@type": "SoftwareApplication",
   "name": "Metronome",
   "applicationCategory": "DeveloperApplication",
+  "softwareVersion": "0.1.0",
   "operatingSystem": "Linux, macOS, Windows",
   "description": "A single-binary cron scheduler in Rust with a pure, unit-tested schedule engine you can embed in your own project.",
   "url": "https://pavanchow.github.io/metronome/",
@@ -60,6 +62,7 @@
   nav .brand .gem{width:16px;height:16px;transform:rotate(45deg);border-radius:3px;background:linear-gradient(135deg,#f0a276,var(--accent))}
   nav .links{display:flex;gap:26px;align-items:center}
   nav .links a{color:var(--ink);font-size:14.5px}
+  nav .v{color:var(--faint);font-family:var(--mono);font-size:12px}
   @media(max-width:640px){nav .links a:not(.gh){display:none}}
 
   .hero{padding:70px 0 30px;text-align:center}
@@ -135,6 +138,7 @@ metronome run --file jobs.metro</pre>
   <div class="links">
     <a href="#demo">Demo</a><a href="#syntax">Syntax</a><a href="#usage">Usage</a>
     <a class="gh" href="https://github.com/pavanchow/metronome">GitHub</a>
+    <span class="v">v0.1.0</span>
   </div>
 </div></nav>
 
@@ -172,6 +176,21 @@ metronome run --file jobs.metro</pre>
 </div>
 
 <div class="wrap">
+  <section id="cli">
+    <h2>See the schedule before it runs.</h2>
+    <p class="lead">Ask for the next fire times of any expression, or validate a whole jobs file, without waiting for a single tick.</p>
+    <pre>$ metronome next "*/15 * * * *" --count 5
+2026-09-07 09:00:00 Mon
+2026-09-07 09:15:00 Mon
+2026-09-07 09:30:00 Mon
+2026-09-07 09:45:00 Mon
+2026-09-07 10:00:00 Mon
+
+$ metronome check --file jobs.metro
+2 job(s) OK</pre>
+    <p class="lead" style="margin-top:18px;font-size:15px;font-family:var(--mono);color:var(--faint)">real CLI output. the browser demo above computes the same fire times with the same engine</p>
+  </section>
+
   <section>
     <h2>Why it is different</h2>
     <p class="lead">A schedule engine you can trust because you can test it directly.</p>
@@ -201,11 +220,26 @@ metronome run --file jobs.metro</pre>
       <tr><td>month</td><td>1-12</td></tr>
       <tr><td>day-of-week</td><td>0-7 (0 and 7 both mean Sunday)</td></tr>
     </table>
-    <p class="lead" style="margin-top:22px;">Supports <code>*</code>, ranges (<code>1-5</code>), steps (<code>*/15</code>, <code>1-30/2</code>), and lists (<code>1,3,5</code>). When both day-of-month and day-of-week are restricted, a day matches if it satisfies either field, standard cron semantics.</p>
+    <p class="lead" style="margin-top:22px;">Every field accepts the same five operators. They compose, so <code>1-30/2</code> is a step over a range and <code>1,3,5</code> is a list.</p>
+    <div class="cards">
+      <div class="step"><h3><code>*</code></h3><p>Any value in the field's full range.</p></div>
+      <div class="step"><h3><code>1-5</code></h3><p>A contiguous range, low to high.</p></div>
+      <div class="step"><h3><code>*/15</code></h3><p>A step over the full range: every 15th value.</p></div>
+      <div class="step"><h3><code>1-30/2</code></h3><p>A step over a range: every 2nd value from 1 to 30.</p></div>
+      <div class="step"><h3><code>1,3,5</code></h3><p>A list of single values or ranges.</p></div>
+      <div class="step"><h3>day-of-month OR day-of-week</h3><p>When both are restricted, a day fires if it satisfies either, matching standard cron.</p></div>
+    </div>
   </section>
 
   <section id="usage">
-    <h2>Usage</h2>
+    <h2>Two surfaces, one crate.</h2>
+    <p class="lead">Run it as a binary, or embed the engine and test your own schedules in your own tests.</p>
+    <div class="cards">
+      <div class="step"><h3>next</h3><p>Print the next N fire times for an expression, so you can eyeball a schedule before committing it.</p></div>
+      <div class="step"><h3>check</h3><p>Validate a jobs file without running it, so a bad expression fails in review, not at 3am.</p></div>
+      <div class="step"><h3>run</h3><p>Sleep until each job is due, then run it in-process. No daemon, no root-owned crontab.</p></div>
+      <div class="step"><h3>library</h3><p>Pull in the metronome crate and call CronExpr::parse and next_after directly from your own Rust code.</p></div>
+    </div>
     <pre>metronome next "*/15 * * * *" --count 5
 metronome check --file jobs.metro
 metronome run --file jobs.metro</pre>
