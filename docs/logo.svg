@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="Metronome logo">
+  <!-- metronome body: trapezoid -->
+  <path d="M50 20 h28 l18 88 h-64 Z" fill="#4f46e5"/>
+  <path d="M50 20 h28 l4 20 h-36 Z" fill="#6366f1"/>
+  <!-- center scale slot -->
+  <rect x="61" y="44" width="6" height="52" rx="3" fill="#c7d2fe"/>
+  <!-- pendulum rod -->
+  <line x1="64" y1="100" x2="90" y2="30" stroke="#f59e0b" stroke-width="5" stroke-linecap="round"/>
+  <!-- weight bead -->
+  <rect x="80" y="46" width="16" height="10" rx="2" fill="#f59e0b" transform="rotate(-20 88 51)"/>
+  <!-- pivot -->
+  <circle cx="64" cy="100" r="5" fill="#fbbf24"/>
+</svg>

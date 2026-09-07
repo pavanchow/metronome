@@ -1,3 +1,5 @@
+<img src="docs/logo.svg" alt="Metronome logo" width="96">
+
 # Metronome
 
 **A single-binary cron scheduler in Rust with a schedule engine you can actually unit test.**
