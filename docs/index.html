@@ -110,6 +110,15 @@
 
   footer{padding:60px 0;border-top:1px solid var(--line);text-align:center;color:var(--muted);font-size:14px}
   footer .name{color:var(--ink);font-weight:600}
+
+  @media(prefers-color-scheme:dark){
+    :root{--ink:#f2f2f6;--muted:#a0a3ad;--faint:#767a8b;--line:#26262c;--panel:#131318;--panel2:#141419;--accent-soft:#2a1710}
+    body{background:#0a0a0c}
+    nav{background:rgba(10,10,12,.82)}
+    .card{background:linear-gradient(180deg,#141019,#0f0c11)}
+    .btn.primary{color:#0a0a0c}
+    #cronInput,#cronResults,.preset-btn{background:#131318}
+  }
 </style>
 <link rel="author" href="https://github.com/pavanchow">
 <script type="application/ld+json">
