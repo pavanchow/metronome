@@ -3,43 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Metronome: a single-binary cron scheduler in Rust</title>
+<title>Metronome: single-binary cron scheduler in Rust | Pavan Nallamothu</title>
 <link rel="icon" type="image/svg+xml" href="logo.svg">
-<meta name="description" content="Metronome is a single-binary cron scheduler in Rust with a pure, unit-tested schedule engine you can embed in your own project. No daemon, no global state.">
-<meta name="author" content="Pavan Nallamothu (pavanchow)">
-<meta name="keywords" content="cron scheduler, Rust cron, cron expression parser, job scheduler, next fire time, next_after, single binary, unit testable scheduler, crontab, cron syntax, Pavan Nallamothu, pavanchow">
+<meta name="description" content="Metronome, a single-binary cron scheduler in Rust with a pure, unit-tested schedule engine you can embed in your own project. No daemon, no global state. By Pavan Nallamothu.">
+<meta name="keywords" content="cron scheduler, Rust cron, cron expression parser, job scheduler, next fire time, single binary scheduler, embeddable scheduler, unit tested scheduler, crontab, cron syntax, task scheduler Rust, cron library, Pavan Nallamothu, pavanchow">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="Pavan Nallamothu">
+<link rel="author" href="https://github.com/pavanchow">
 <link rel="canonical" href="https://pavanchow.github.io/metronome/">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Metronome: a single-binary cron scheduler in Rust">
-<meta property="og:description" content="Metronome is a single-binary cron scheduler in Rust with a pure, unit-tested schedule engine you can embed in your own project.">
+<meta property="og:site_name" content="Pavan Nallamothu">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Metronome: single-binary cron scheduler in Rust | Pavan Nallamothu">
+<meta property="og:description" content="A single-binary cron scheduler in Rust with a pure, unit-tested schedule engine you can embed in your own project. No daemon, no global state. By Pavan Nallamothu.">
 <meta property="og:url" content="https://pavanchow.github.io/metronome/">
-<meta property="og:site_name" content="Metronome">
+<meta property="og:image" content="https://pavanchow.github.io/metronome/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Metronome by Pavan Nallamothu">
 
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Metronome: a single-binary cron scheduler in Rust">
-<meta name="twitter:description" content="A single-binary cron scheduler in Rust with a pure, unit-tested schedule engine you can embed.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@pavanchow">
+<meta name="twitter:creator" content="@pavanchow">
+<meta name="twitter:title" content="Metronome: single-binary cron scheduler in Rust | Pavan Nallamothu">
+<meta name="twitter:description" content="A single-binary cron scheduler in Rust with a pure, unit-tested schedule engine you can embed. By Pavan Nallamothu.">
+<meta name="twitter:image" content="https://pavanchow.github.io/metronome/og-image.png">
 
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Metronome",
-  "applicationCategory": "DeveloperApplication",
-  "softwareVersion": "0.1.0",
-  "operatingSystem": "Linux, macOS, Windows",
-  "description": "A single-binary cron scheduler in Rust with a pure, unit-tested schedule engine you can embed in your own project.",
-  "url": "https://pavanchow.github.io/metronome/",
-  "author": {
-    "@type": "Person",
-    "name": "Pavan Nallamothu"
-  },
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
-}
+{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","@id":"https://pavanchow.github.io/metronome/#software","name":"Metronome","applicationCategory":"DeveloperApplication","operatingSystem":"Linux, macOS, Windows","description":"A single-binary cron scheduler in Rust with a pure, unit-tested schedule engine you can embed in your own project. No daemon, no global state.","url":"https://pavanchow.github.io/metronome/","image":"https://pavanchow.github.io/metronome/og-image.png","softwareVersion":"0.1.0","programmingLanguage":"Rust","codeRepository":"https://github.com/pavanchow/metronome","license":"https://opensource.org/licenses/MIT","datePublished":"2026-08-21","author":{"@id":"https://github.com/pavanchow#person"},"publisher":{"@id":"https://github.com/pavanchow#person"},"keywords":"cron scheduler, Rust cron, cron expression parser, job scheduler, next fire time, single binary, crontab","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Single self-contained binary","Cron expression parsing","Pure, unit-tested schedule engine","Embeddable in your own Rust project","Computes the next fire time from any instant","No daemon and no global state"]},{"@type":"Person","@id":"https://github.com/pavanchow#person","name":"Pavan Nallamothu","alternateName":"pavanchow","url":"https://github.com/pavanchow","jobTitle":"Software Engineer and Security Researcher","knowsAbout":["Rust","cron scheduling","job scheduling","systems programming","command-line tools","time and scheduling"],"sameAs":["https://github.com/pavanchow","https://hackerone.com/pavanchow"]},{"@type":"WebSite","@id":"https://pavanchow.github.io/metronome/#website","name":"Metronome by Pavan Nallamothu","url":"https://pavanchow.github.io/metronome/","author":{"@id":"https://github.com/pavanchow#person"},"inLanguage":"en"},{"@type":"BreadcrumbList","@id":"https://pavanchow.github.io/metronome/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Pavan Nallamothu","item":"https://github.com/pavanchow"},{"@type":"ListItem","position":2,"name":"Metronome","item":"https://pavanchow.github.io/metronome/"}]},{"@type":"WebPage","@id":"https://pavanchow.github.io/metronome/#webpage","url":"https://pavanchow.github.io/metronome/","name":"Metronome: single-binary cron scheduler in Rust | Pavan Nallamothu","isPartOf":{"@id":"https://pavanchow.github.io/metronome/#website"},"about":{"@id":"https://pavanchow.github.io/metronome/#software"},"author":{"@id":"https://github.com/pavanchow#person"},"inLanguage":"en"}]}
 </script>
 
 <style>
@@ -120,10 +112,6 @@
     #cronInput,#cronResults,.preset-btn{background:#131318}
   }
 </style>
-<link rel="author" href="https://github.com/pavanchow">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Person","name":"Pavan Nallamothu","alternateName":"pavanchow","url":"https://github.com/pavanchow","sameAs":["https://github.com/pavanchow","https://hackerone.com/pavanchow"]}
-</script>
 </head>
 <body>
 
@@ -258,6 +246,17 @@ metronome run --file jobs.metro</pre>
 <footer>
   <p><a href="https://github.com/pavanchow/metronome">github.com/pavanchow/metronome</a></p>
   <p style="margin-top:8px">By <span class="name">Pavan Nallamothu</span>.</p>
+  <div style="max-width:760px;margin:40px auto 0;text-align:left">
+    <p style="text-align:center;font-weight:600;color:var(--ink);margin-bottom:16px">More open-source tools by Pavan Nallamothu</p>
+    <ul style="list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px 28px;padding:0;font-size:14.5px">
+      <li><a href="https://pavanchow.github.io/chronos/">Chronos</a>: a CPU scheduler running FIFO, SJF, round-robin, priority, and MLFQ</li>
+      <li><a href="https://pavanchow.github.io/relay/">Relay</a>: a from-scratch CI/CD engine whose scheduler is a deterministic DAG executor</li>
+      <li><a href="https://pavanchow.github.io/flint/">Flint</a>: an embedded single-binary key-value store with an append-only log</li>
+      <li><a href="https://pavanchow.github.io/keystone/">Keystone</a>: a durable, ordered, embedded key-value store in pure Rust</li>
+      <li><a href="https://pavanchow.github.io/stopwatch/">Stopwatch</a>: a profiler with a call tree of self time and total time</li>
+    </ul>
+    <p style="text-align:center;margin-top:22px"><a href="https://github.com/pavanchow">All projects on GitHub: github.com/pavanchow</a></p>
+  </div>
 </footer>
 
 <script>
