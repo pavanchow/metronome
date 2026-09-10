@@ -6,6 +6,8 @@ Metronome is a single-binary cron scheduler written in Rust with a schedule engi
 
 **[Live demo](https://pavanchow.github.io/metronome/)** · MIT licensed · written in Rust
 
+Built from scratch by [Pavan Nallamothu](https://pavanchow.github.io/) ([LinkedIn](https://www.linkedin.com/in/pavanchow/), [GitHub](https://github.com/pavanchow)).
+
 System cron is a daemon with global state, root-owned crontabs, and no real way to test a schedule without waiting for it to fire. Metronome takes a different angle: point one static binary at a plain text jobs file and it parses cron expressions, computes the next fire time, and runs jobs in-process. The scheduling logic that decides "when does this fire next" is a pure function in a small library, fully unit tested against known cases, with zero I/O and zero global state. You can embed it in your own Rust project and test your own schedules the same way.
 
 ## Why use it
